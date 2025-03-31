@@ -1,0 +1,290 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+}
+.profile-info {
+    margin-bottom: 20px;
+}
+.profile-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.actions a,
+.actions button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: #007BFF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.actions button:hover,
+.actions a:hover {
+    background: #0056b3;
+}
+/* Timeline Styles */
+.timeline-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* Post Card Styles */
+.post-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.post-title {
+    font-size: 20px;
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+.post-username {
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.post-description {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.post-details {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-rating {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.post-time {
+    font-style: italic;
+}
+
+/* Create Post Button */
+.create-post-button {
+    display: block;
+    max-width: 200px;
+    margin: 30px auto;
+    text-align: center;
+    background: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.create-post-button:hover {
+    background: #0056b3;
+}
+/* Comment Styles */
+.comment-card {
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.comment-username {
+    font-size: 14px;
+    color: #007BFF;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comment-text {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.comment-details {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-time {
+    font-style: italic;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.comment-actions button {
+    background: none;
+    border: none;
+    color: #007BFF;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.comment-actions button:hover {
+    text-decoration: underline;
+}
+
+/*styling for flashed messages*/
+.flash-messages {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    width: auto;
+    max-width: 300px;
+}
+
+.flash-message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.flash-message.alert-success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.flash-message.alert-error, .flash-message.alert-danger {
+    background-color: #F44336;
+    color: white;
+}
+
+.flash-message.alert-warning {
+    background-color: #FFC107;
+    color: black;
+}
+
+.flash-message.alert-info {
+    background-color: #2196F3;
+    color: white;
+}
+
+
+/* Profile picture styling */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1; /* Ensures the image is treated as a square */
+}
+  
+/* Auto-hide after 3 seconds */
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.flash-message.fade {
+    animation: fadeOut 3s forwards;
+}
+form {
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+}
+
+img {
+    border-radius: 50%;
+    margin-top: 10px;
+}

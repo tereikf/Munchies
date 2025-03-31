@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Munchies | Posts{% endblock %}
+
+{% block content %}
+<div class="post-card">
+    <h2 class="post-title">{{ post.caption }}</h2>
+    <p class="post-username">{{ post.user.username }}</p>
+    <img src="{{ url_for('static',filename = 'uploads/' + post.image_path) }}" alt="post image" class="post-image">
+    <p class="post-description">{{ post.description }}</p>
+    <div class="post-details">
+        <p class="post-rating">{{ post.rating | star }}</p>
+        <p class="post-time">{{ post.time_posted | format_time }}</p>
+    </div>
+    {% if comments %}
+
+        {% for comment in comments %}
+            <div class="comment-card">
+                <p class="comment-username" onclick="window.location.href='{{ url_for('profile',username=post.user.username) }}'">
+                    {{ post.user.username }}
+                </p>
+                <p class="comment-text">{{ comment.comment_text }}</p>
+                <div class="comment-details">
+                    <p class="comment-time">{{ comment.time_posted }}</p>
+                </div>
+            </div>
+
+        {% endfor %}
+    {% else %}
+        <p><i>No yapping just yet</i></p>
+</div>
+{% endblock %}

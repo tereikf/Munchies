@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+
+{% block content %}
+    <h1>User Details</h1>
+    <ul>
+        {% for user in users %}
+            <li>
+                {{ user.username }}
+
+        {% endfor %}
+
+    </ul>
+    <a href="{{ url_for('index')}}">Logout</a>
+
+{% endblock %}

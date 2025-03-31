@@ -1,0 +1,17 @@
+{% extends "base.html" %}]
+{% block title %}Other Page{% endblock %}
+
+{% block content %}
+<h1>Filters</h1>
+<p>{{ text|upper }}</p>
+<p>{{ text|capitalize }}</p>
+<p>{{ text|title }}</p>
+<p>{{ text|trim }}</p>
+<p>{{ text|lower }}</p>
+<p>{{ text|replace('l','W') }}</p>
+<p>{{ text|reverse_string }}</p>
+<p>{{ text|repeat_string(3) }}</p>
+<p>{{ text|alternate_casing}}</p>
+
+<a href="{{ url_for('index')}}">Return Home</a>
+{% endblock %}

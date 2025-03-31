@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}User Profile | Munchies{% endblock %}
+
+{% block content %}
+
+
+    <!-- User Profile Section -->
+    <div class="profile-container">
+        <div class="profile-picture">
+            {% if selected_user.profile_picture %}
+                <img src="{{ url_for('static',filename = 'profile_pics/' + selected_user.profile_picture) }}" alt="{{ selected_user.username }}'s profile pic">
+            {% else %}
+                <img src="{{ url_for('static',filename = 'img/default_profile_pic.png') }}" alt="default profile pic">
+            {% endif %}
+        </div>
+        <div class="profile-info">
+            <p><strong>Username:</strong> {{ selected_user.username }}</p>
+            <p><strong>Email:</strong> {{ selected_user.email }}</p>
+            {% if selected_user.bio %}
+                <p align="center">{{ selected_user.bio }}</p>
+            {% endif %}
+        </div>
+        <div class="actions">
+            {% if user.is_following(selected_user) %}
+                <form action="{{ url_for('unfollow',username=selected_user.username) }}" method="post">
+                    <button type="submit">Unfollow</button>
+                </form>
+            {% else %}
+                <form action="{{ url_for('follow',username=selected_user.username) }}" method="post">
+                    <button type="submit">Follow</button>
+                </form>
+            {% endif %}      
+        </div>
+    </div>
+    <div class="timeline-container">
+        {% if posts %}
+
+            {% for post in posts %}
+                <div class="post-card">
+                    <h2 class="post-title">
+                        {{ post.caption }}
+                    </h2>
+
+                    <img src="{{ url_for('static',filename = 'uploads/' + post.image_path) }}" alt="post image" class="post-image">
+                    <p class="post-description">{{ post.description }}</p>
+                    <div class="post-details">
+                        <p class="post-rating">{{ post.rating | star }}</p>
+                        <p class="post-time">{{ post.time_posted | format_time }}</p>
+                    </div>  
+                </div>
+
+            {% endfor %}
+        {% else %}
+            <p class="body">Get a load o' this guy</p>
+        {% endif %}
+    </div>
+{% endblock %}

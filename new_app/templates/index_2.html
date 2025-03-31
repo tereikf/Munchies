@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Munchies{% endblock %}
+
+{% block content %}
+    <h1>HOME PAGE</h1>
+    <!---->
+    <br>
+    <a href="{{ url_for('set_data') }}">Set Session Data</a><br>
+    <a href="{{ url_for('get_data') }}">Get Session Data</a><br>
+    <a href="{{ url_for('clear_session') }}">Clear Session</a><br>
+    <a href="{{ url_for('clear_users') }}">Clear All Users</a><br>
+    <br>
+    <a href="{{ url_for('set_cookie') }}">Set Cookie</a><br>
+    <a href="{{ url_for('get_cookie') }}">Get Cookie</a><br>
+    <a href="{{ url_for('remove_cookie') }}">Remove Cookie</a><br>
+
+    <a href="#" class="btn btn-primary">Button IDK</a>
+    <a href="#" class="btn btn-danger">Button Danger</a>
+    <img src="/img/logo.png" alt="For the blind niggas">
+    <script src="/js/hello.js"></script>
+{% endblock %}

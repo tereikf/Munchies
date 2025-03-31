@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}>Flask App{% endblock %}
+
+{% block content %}
+    <h1>Downloads</h1>
+    <a href="{{ url_for('download',filename=filename) }}">Download File</a>
+
+
+{% endblock %}

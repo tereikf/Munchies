@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block tile %}Sign Up{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{{ url_for('sign_up') }}" enctype="multipart/form-data">
+        <input type="text" name="username" placeholder="Username" required="required"><br>
+        <input type="password" name="password1" placeholder="Password" required="required"><br>
+        <input type="password" name="password2" placeholder="Confirm Password" required="required"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="submit" value="Submit" class="btn btn-primary"><br>
+        <ul>
+            <li>password must be atleast 6 characters long</li>
+            <li>password must have atleast 1 uppercase letter</li>
+            <li>password must have atleast 1 number</li>
+            <li>password must have atleast 1 special character ~!@#$%^&*(),.?</li>
+    
+        </ul>
+    </form>
+
+{% endblock %}

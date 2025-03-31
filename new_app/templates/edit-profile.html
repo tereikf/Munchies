@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Edit Profile | Munchies{% endblock %}
+
+{% block content %}
+
+<h2 align="center">Edit Profile</h2>
+
+<form action="{{ url_for('edit_profile') }}" method="POST" enctype="multipart/form-data">
+    <div>
+        <label for="bio">Bio:</label>
+        {% if user.bio %}
+            <textarea name="bio" class="form-control" placeholder="{{ user.bio }}"></textarea>
+        {% else %}
+            <textarea name="bio" class="form-control" placeholder="Hey everyone, welcome to my page..."></textarea>
+        {% endif %}
+        </div>
+
+    <div>
+        <label for="profile_picture">Profile Picture:</label>
+        <input type="file" name="profile_picture" class="form-control-file" accept="image/*">
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+    </div>
+</form>
+
+{% endblock %} 
